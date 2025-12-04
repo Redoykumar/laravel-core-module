@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Test Documentation</title>
+        <style>
+            body {
+                text-rendering: optimizeLegibility;
+                font-family: Source SansSerif Pro, Arial, sans-serif;
+                font-variant-ligatures: common-ligatures;
+                font-kerning: normal;
+                margin-left: 2rem;
+                background-color: #fff;
+                color: #000;
+            }
+
+            body > ul > li {
+                font-size: larger;
+            }
+
+            h2 {
+                font-size: larger;
+                text-decoration-line: underline;
+                text-decoration-thickness: 2px;
+                margin: 0;
+                padding: 0.5rem 0;
+            }
+
+            ul {
+                list-style: none;
+                margin: 0 0 2rem;
+                padding: 0 0 0 1rem;
+                text-indent: -1rem;
+            }
+
+            .success:before {
+                color: #4e9a06;
+                content: '✓';
+                padding-right: 0.5rem;
+            }
+
+            .defect {
+                color: #a40000;
+            }
+
+            .defect:before {
+                color: #a40000;
+                content: '✗';
+                padding-right: 0.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Json Driven Response Helper (Redoy\CoreModule\Tests\Unit\JsonDrivenResponseHelper)</h2>
+        <ul>
+            <li class="success">Json driven cases</li>
+        </ul>
+        <h2>Response Helper Trait (Redoy\CoreModule\Tests\Unit\ResponseHelperTrait)</h2>
+        <ul>
+            <li class="success">Trait has success response method</li>
+            <li class="success">Trait has error response method</li>
+            <li class="success">Api codes ok equals 200</li>
+            <li class="success">Api codes bad request equals 400</li>
+            <li class="success">Api codes created equals 201</li>
+            <li class="success">Api codes unauthorized equals 401</li>
+            <li class="success">Api codes forbidden equals 403</li>
+            <li class="success">Api codes not found equals 404</li>
+            <li class="success">Api codes internal server error equals 500</li>
+            <li class="success">Api codes service unavailable equals 503</li>
+            <li class="success">Api codes unprocessable entity equals 422</li>
+            <li class="success">Json user data decodes correctly</li>
+            <li class="success">Json product data decodes correctly</li>
+            <li class="success">Json order with nested items decodes correctly</li>
+            <li class="success">Json error data decodes correctly</li>
+            <li class="success">Json user list array decodes correctly</li>
+            <li class="success">Json transaction data decodes correctly</li>
+            <li class="success">Success response returns response object</li>
+            <li class="success">Error response returns response object</li>
+            <li class="success">Api codes accepted equals 202</li>
+            <li class="success">Api codes no content equals 204</li>
+            <li class="success">Api codes payment required equals 402</li>
+            <li class="success">Api codes method not allowed equals 405</li>
+            <li class="success">Api codes conflict equals 409</li>
+            <li class="success">Api codes gone equals 410</li>
+            <li class="success">Http status codes array contains ok</li>
+            <li class="success">Http status codes array contains bad request</li>
+            <li class="success">Http status codes array contains not found</li>
+            <li class="success">Http status codes array contains server error</li>
+            <li class="success">Json encoding decoding preserves data</li>
+            <li class="success">Json handles special characters</li>
+            <li class="success">Empty json object</li>
+            <li class="success">Json array of objects</li>
+            <li class="success">Json with mixed types</li>
+        </ul>
+    </body>
+</html>

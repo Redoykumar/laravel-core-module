@@ -1,0 +1,252 @@
+[
+    {
+        "id": "tc1",
+        "name": "success with simple data",
+        "method": "successResponse",
+        "data": {
+            "message": "hello"
+        },
+        "api_code": 200,
+        "message": "OK",
+        "expect_exception": null
+    },
+    {
+        "id": "tc2",
+        "name": "success with null data and no api code",
+        "method": "successResponse",
+        "data": null,
+        "api_code": null,
+        "message": null,
+        "expect_exception": null
+    },
+    {
+        "id": "tc3",
+        "name": "error with structured errors",
+        "method": "errorResponse",
+        "data": {
+            "errors": {
+                "email": [
+                    "invalid"
+                ]
+            }
+        },
+        "api_code": 422,
+        "message": "Validation failed",
+        "expect_exception": null
+    },
+    {
+        "id": "tc4",
+        "name": "success with nested arrays",
+        "method": "successResponse",
+        "data": {
+            "users": [
+                {
+                    "id": 1,
+                    "name": "A"
+                },
+                {
+                    "id": 2,
+                    "name": "B"
+                }
+            ]
+        },
+        "api_code": 200,
+        "message": "Nested",
+        "expect_exception": null
+    },
+    {
+        "id": "tc5",
+        "name": "error with custom numeric code",
+        "method": "errorResponse",
+        "data": {
+            "reason": "conflict"
+        },
+        "api_code": 409,
+        "message": "Conflict",
+        "expect_exception": null
+    },
+    {
+        "id": "tc6",
+        "name": "success with special characters",
+        "method": "successResponse",
+        "data": {
+            "text": "José García — 測試 — тест"
+        },
+        "api_code": 200,
+        "message": "Unicode",
+        "expect_exception": null
+    },
+    {
+        "id": "tc7",
+        "name": "invalid api_code type (string) should raise TypeError",
+        "method": "successResponse",
+        "data": {
+            "x": 1
+        },
+        "api_code": "two-hundred",
+        "message": "bad code",
+        "expect_exception": "TypeError"
+    },
+    {
+        "id": "tc8",
+        "name": "invalid method name should raise Error",
+        "method": "nonExistingMethod",
+        "data": null,
+        "api_code": null,
+        "message": null,
+        "expect_exception": "Error"
+    },
+    {
+        "id": "tc9",
+        "name": "large payload",
+        "method": "successResponse",
+        "data": {
+            "items": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16
+            ]
+        },
+        "api_code": 200,
+        "message": "large",
+        "expect_exception": null
+    },
+    {
+        "id": "tc10",
+        "name": "boolean data true",
+        "method": "successResponse",
+        "data": true,
+        "api_code": 200,
+        "message": null,
+        "expect_exception": null
+    },
+    {
+        "id": "tc11",
+        "name": "numeric data",
+        "method": "successResponse",
+        "data": 12345,
+        "api_code": 200,
+        "message": "number",
+        "expect_exception": null
+    },
+    {
+        "id": "tc12",
+        "name": "empty array data",
+        "method": "successResponse",
+        "data": [],
+        "api_code": 200,
+        "message": "empty",
+        "expect_exception": null
+    },
+    {
+        "id": "tc13",
+        "name": "null api_code on errorResponse should default to BAD_REQUEST",
+        "method": "errorResponse",
+        "data": {
+            "message": "bad"
+        },
+        "api_code": null,
+        "message": "default",
+        "expect_exception": null
+    },
+    {
+        "id": "tc14",
+        "name": "deeply nested object",
+        "method": "successResponse",
+        "data": {
+            "a": {
+                "b": {
+                    "c": {
+                        "d": {
+                            "e": "deep"
+                        }
+                    }
+                }
+            }
+        },
+        "api_code": 200,
+        "message": "deep",
+        "expect_exception": null
+    },
+    {
+        "id": "tc15",
+        "name": "array of mixed types",
+        "method": "successResponse",
+        "data": [
+            1,
+            "two",
+            {
+                "three": 3
+            },
+            [
+                4,
+                5
+            ]
+        ],
+        "api_code": 200,
+        "message": "mixed",
+        "expect_exception": null
+    },
+    {
+        "id": "tc16",
+        "name": "success with floating point",
+        "method": "successResponse",
+        "data": 12.345,
+        "api_code": 200,
+        "message": "float",
+        "expect_exception": null
+    },
+    {
+        "id": "tc17",
+        "name": "error with message only",
+        "method": "errorResponse",
+        "data": null,
+        "api_code": 400,
+        "message": "just message",
+        "expect_exception": null
+    },
+    {
+        "id": "tc18",
+        "name": "success with boolean false",
+        "method": "successResponse",
+        "data": false,
+        "api_code": 200,
+        "message": null,
+        "expect_exception": null
+    },
+    {
+        "id": "tc19",
+        "name": "api_code out of range (999) should raise InvalidArgumentException",
+        "method": "successResponse",
+        "data": {
+            "ok": true
+        },
+        "api_code": 999,
+        "message": "custom",
+        "expect_exception": "InvalidArgumentException"
+    },
+    {
+        "id": "tc20",
+        "name": "message with long unicode",
+        "method": "successResponse",
+        "data": {
+            "msg": "長いメッセージ — with emojis 👍🚀"
+        },
+        "api_code": 200,
+        "message": "unicode-long",
+        "expect_exception": null
+    }
+]

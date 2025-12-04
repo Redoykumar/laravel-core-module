@@ -1,0 +1,45 @@
+{
+    "name": "redoy/core-module",
+    "description": "Lightweight Laravel package providing standardized JSON response handling and HTTP status code constants for modern API development",
+    "version": "1.0.0",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Redoy",
+            "email": "contact@redoy.dev"
+        }
+    ],
+    "homepage": "https://github.com/redoy/core-module",
+    "keywords": [
+        "laravel",
+        "api",
+        "response",
+        "json",
+        "http-status-codes"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Redoy\\CoreModule\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Redoy\\CoreModule\\Providers\\CoreModuleServiceProvider"
+            ],
+            "aliases": {
+                "CoreResponse": "Redoy\\CoreModule\\Facades\\CoreResponse"
+            }
+        }
+    },
+    "require": {
+        "php": "^8.2",
+        "illuminate/http": "^11.0",
+        "marcin-orlowski/laravel-api-response-builder": "^12.1.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0",
+        "mockery/mockery": "^1.6"
+    }
+}

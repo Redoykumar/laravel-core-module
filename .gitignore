@@ -1,0 +1,39 @@
+# Composer dependencies
+vendor/
+composer.lock
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# OS files
+.env.local
+.env.*.local
+
+# Test coverage and reports
+coverage/
+.phpunit.result.cache
+
+# Build artifacts
+dist/
+build/
+
+# Logs
+*.log
+logs/
+
+# Node dependencies (if using frontend build tools)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# PhpStorm cache
+.php-cs-fixer.cache
+
+# PHPStan cache
+.phpstan.cache
