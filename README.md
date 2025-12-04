@@ -23,9 +23,28 @@ A lightweight Laravel package that provides standardized JSON response handling 
    composer dump-autoload
    ```
 
-3. **Verify Installation**:
+3. **Register Service Provider** (Auto-registered, but manual if needed):
    ```bash
    php artisan package:discover
+   ```
+
+4. **Publish Package Assets** (Configuration & Language Files):
+   ```bash
+   php artisan vendor:publish --provider="Redoy\CoreModule\Providers\CoreModuleServiceProvider"
+   ```
+
+   This will publish:
+   - **Configuration**: `config/core.php`, `config/response_builder.php`
+   - **Language Files**: `resources/lang/en/api.php`, `resources/lang/bn/api.php`
+
+5. **Optional - Publish Only Configuration**:
+   ```bash
+   php artisan vendor:publish --provider="Redoy\CoreModule\Providers\CoreModuleServiceProvider" --tag="config"
+   ```
+
+6. **Optional - Publish Only Language Files**:
+   ```bash
+   php artisan vendor:publish --provider="Redoy\CoreModule\Providers\CoreModuleServiceProvider" --tag="lang"
    ```
 
 ## Quick Start
